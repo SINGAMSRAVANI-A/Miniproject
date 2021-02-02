@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#d72631</color>
+
+    <color name="orange">#FFA500</color>
+    <color name="black">#0B0A0A</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--colors for modern ui-->
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">#FFA500</color>
+    <color name="loginBkColor">#FFA500</color>
+
+    <!--colros for card-->
+    <color name="whiteCardColor">#FFFFFF</color>
+</resources>

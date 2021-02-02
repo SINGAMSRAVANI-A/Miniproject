@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/loginCard"
+    app:cardCornerRadius="@dimen/loginCardRadius"
+    android:elevation="5dp"
+    android:layout_gravity="top"
+    android:layout_margin="10dp"
+    android:layout_marginTop="@dimen/loginViewsMargin"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    android:background="@color/black">
+
+        <LinearLayout
+            style="@style/linearParent"
+            android:layout_gravity="center"
+            android:padding="@dimen/loginViewsMargin">
+
+
+            <ImageView
+                android:id="@+id/dpimg"
+                android:layout_width="200dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Add My Number"
+                android:src="@drawable/user_dp"
+                style="@style/headerTextPrimary"/>
+
+            <TextView
+                android:id="@+id/nameholder"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="User Name"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                style="@style/headerTextPrimary" />
+            <TextView
+                android:id="@+id/idholder"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="User id"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                style="@style/headerTextPrimary" />
+
+            <TextView
+                android:id="@+id/Titleholder"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="work Title"
+                android:fontFamily="@font/font2"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                style="@style/headerTextPrimary" />
+
+            <TextView
+                android:id="@+id/dataholder"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Work Data"
+                android:fontFamily="@font/font3"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                style="@style/headerTextPrimary" />
+
+            <Button
+                android:id="@+id/sendreqbtn"
+                style="@style/loginButton"
+                android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:text="Send Request" />
+
+        </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+

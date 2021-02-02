@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/orange"
+    android:layout_marginTop="@dimen/loginViewsMargin"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    app:cardCornerRadius="@dimen/loginCardRadius"
+    style="@style/loginCard">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:padding="@dimen/loginViewsMargin"
+        android:background="@color/orange"
+        style="@style/linearParent">
+        <TextView
+            android:id="@+id/worktxt"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:text="Work Title"
+            android:textColor="@color/black"
+            android:fontFamily="@font/font2"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            style="@style/headerTextPrimary" />
+        <TextView
+            android:id="@+id/worktitle"
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            android:fontFamily="@font/font3"
+            android:textColor="@color/white"
+            android:text="Work Discription"
+            android:textSize="20sp"
+            style="@style/headerTextPrimary" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

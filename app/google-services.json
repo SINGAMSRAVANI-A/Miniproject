@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "210698367472",
+    "project_id": "timebank-950c5",
+    "storage_bucket": "timebank-950c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210698367472:android:1e5ec97695d686dc736d35",
+        "android_client_info": {
+          "package_name": "com.prasadthegreat.timebank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210698367472-vc1kvcihaofni0iuam77rrgmt766seso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZvLkXsK-9GRcVWqVgAoolinmm0uFwdxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210698367472-vc1kvcihaofni0iuam77rrgmt766seso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
