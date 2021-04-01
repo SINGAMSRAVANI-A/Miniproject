@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,11 +27,16 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        Log.d("message", "Entered LoginiActivity");
         mAuth = FirebaseAuth.getInstance();
         mUsernametxt=(EditText)findViewById(R.id.logemailtxt);
         mPasswordtxt=(EditText)findViewById(R.id.logpasstxt);
-        mRegbtn=(Button)findViewById(R.id.btnRegLogin);
-        mLoginbtn=(Button)findViewById(R.id.loginbtn);
+        mRegbtn=(Button) findViewById(R.id.btnRegLogin);
+        mLoginbtn=(Button) findViewById(R.id.loginbtn);
+        if (mRegbtn == null || mLoginbtn == null){
+            Log.d("Message: ", "Returns Null objects");
+        }
+        Log.d("message", "Not Null");
         mLoginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

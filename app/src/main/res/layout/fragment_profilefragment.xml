@@ -1,207 +1,289 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/whiteCardColor"
-    android:orientation="vertical"
     tools:context=".profilefragment">
 
-    <include
-        layout="@layout/appbar"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:fontFamily="@font/font1"
-        android:background="@color/orange"
-        android:padding="20dp">
-
-        <ImageView
-            android:id="@+id/profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/user_dp" />
-
-        <TextView
-            android:id="@+id/fullname_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/profile_image"
-            android:includeFontPadding="false"
-            android:text="User Name"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/profile_status"
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/fullname_field"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/profile_image"
-            android:includeFontPadding="false"
-            android:text="Discription"
-            android:textSize="14sp" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-100dp"
-        android:layout_width="match_parent"
-        android:padding="20dp">
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_height="125dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            app:cardBackgroundColor="#fece2f"
-            app:cardElevation="10dp">
-
-            <RelativeLayout
-                android:layout_height="match_parent"
-                android:background="@color/orange"
-                android:layout_width="match_parent"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="30dp"
-                    android:layout_width="30dp"
-                    android:src="@drawable/ic_baseline_account_box_24" />
-
-                <TextView
-                    android:id="@+id/task_label"
-                    android:includeFontPadding="false"
-                    android:layout_centerInParent="true"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="+123"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/payment_desc"
-                    android:includeFontPadding="false"
-                    android:layout_below="@id/task_label"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="Taks completed"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-            </RelativeLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_height="125dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            app:cardBackgroundColor="#fece2f"
-            app:cardElevation="10dp">
-
-            <RelativeLayout
-                android:background="@color/orange"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="30dp"
-                    android:layout_width="30dp"
-                    android:src="@drawable/ic_baseline_account_box_24" />
-
-                <TextView
-                    android:id="@+id/timecredits_label"
-                    android:includeFontPadding="false"
-                    android:layout_centerInParent="true"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="+123"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/payment_desc2"
-                    android:includeFontPadding="false"
-                    android:layout_below="@id/timecredits_label"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="Balance"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-            </RelativeLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-
+<!--        <include-->
+<!--            layout="@layout/appbar"/>-->
 
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        style="@style/loginCard"
-        app:cardCornerRadius="@dimen/loginCardRadius"
-        android:elevation="5dp"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:layout_marginTop="@dimen/loginViewsMargin"
-        android:layout_marginBottom="@dimen/loginViewsMargin"
-        android:background="@color/orange">
-
-    <LinearLayout
+        android:id="@+id/profileCardview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:background="@color/whiteCardColor"
-        android:orientation="vertical"
-        android:padding="20dp">
-        <TextView
-            android:id="@+id/profile_id"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="User id"
-            android:fontFamily="@font/font2"
-            android:textStyle="bold"
-            android:textColor="@color/orange"
-            android:textSize="20sp"
-            style="@style/headerTextPrimary" />
+        android:layout_marginEnd="0dp"
 
-        <TextView
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="Branch"
-            android:textColor="@color/orange"
-            android:fontFamily="@font/font2"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            style="@style/headerTextPrimary" />
+        app:layout_constraintTop_toTopOf="@+id/mytoolbar"
+        app:layout_constraintLeft_toLeftOf="parent">
 
-        <TextView
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="class"
-            android:textColor="@color/orange"
-            android:fontFamily="@font/font2"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            style="@style/headerTextPrimary" />
-        <Button
-            android:id="@+id/changedatabtn"
-            style="@style/loginButton"
-            android:layout_margin="10dp"
-            android:textColor="@color/white"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="405dp"
+            android:layout_height="372dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/almond"
             android:fontFamily="@font/font1"
-            android:layout_gravity="center"
-            android:text="Edit Data" />
+            android:padding="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraaintLeft_toLeftOf="0dp">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/user_dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fullname_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="48dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:includeFontPadding="false"
+                android:text="User Name"
+                android:textColor="@color/navy"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/profile_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profile_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullname_field"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:includeFontPadding="false"
+                android:text="Description"
+                android:textColor="@color/navy"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/fullname_field" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fece2f"
+                    app:cardCornerRadius="@dimen/loginCardRadius"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/mango"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_baseline_account_box_24" />
+
+                        <TextView
+                            android:id="@+id/task_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:includeFontPadding="false"
+                            android:text="+123"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/payment_desc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/task_label"
+                            android:layout_marginTop="16dp"
+                            android:includeFontPadding="false"
+                            android:text="tasks completed"
+                            android:textColor="@color/text_color"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="125dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#fece2f"
+                    app:cardCornerRadius="@dimen/loginCardRadius"
+                    app:cardElevation="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/mango"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_baseline_account_box_24" />
+
+                        <TextView
+                            android:id="@+id/timecredits_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:includeFontPadding="false"
+                            android:text="+123"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/payment_desc2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/timecredits_label"
+                            android:layout_centerHorizontal="true"
+                            android:includeFontPadding="false"
+                            android:text="Balance"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="175dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        style="@style/loginCard"
+        android:layout_width="378dp"
+        android:layout_height="283dp"
+        android:layout_gravity="center"
+        android:layout_margin="0dp"
+        android:background="@color/almond"
+        android:elevation="30dp"
+        app:cardCornerRadius="@dimen/loginCardRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileCardview">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profileConstraintLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/almond"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/profile_id"
+                style="@style/headerTextPrimary"
+                android:fontFamily="@font/font2"
+                android:text="User id"
+                android:textColor="@color/navy"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/headerTextPrimary"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/font2"
+                android:text="Branch"
+                android:textColor="@color/navy"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_id" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/headerTextPrimary"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/font2"
+                android:text="class"
+                android:textColor="@color/navy"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <LinearLayout
+                android:layout_width="324dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="44dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView4">
+
+                <Button
+                    android:id="@+id/changedatabtn"
+                    style="@style/loginButton"
+                    android:layout_width="133dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="88dp"
+                    android:fontFamily="@font/font1"
+                    android:text="Edit Data"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/logout"
+                    style="@style/loginButton"
+                    android:layout_width="142dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/font1"
+                    android:text="Logout"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

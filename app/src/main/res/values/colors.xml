@@ -13,4 +13,11 @@
 
     <!--colros for card-->
     <color name="whiteCardColor">#FFFFFF</color>
+
+    <color name="navy">#1e3d59</color>
+    <color name="almond">#f5f0e1</color>
+    <color name="red_orange">#ff6e40</color>
+    <color name="mango">#ffc13b</color>
+
+    <color name="text_color">#1e3d59</color>
 </resources>

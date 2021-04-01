@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +38,7 @@ public class profilefragment extends Fragment {
     private String mParam2;
 
     private FirebaseAuth mAuth;
-    Button mChangedetailsbtn;
+    Button mChangedetailsbtn, mLogoutButton;
     ImageView mChangedpbtn;
     private Toolbar mToolbar;
     TextView mname,mid,taskcomplete,timecredits,mstatus;
@@ -73,6 +74,7 @@ public class profilefragment extends Fragment {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         mChangedetailsbtn=(Button)view.findViewById(R.id.changedatabtn);
         mChangedpbtn=(ImageView)view.findViewById(R.id.profile_image);
+        mLogoutButton = (Button) view.findViewById(R.id.logout);
 
         mname=(TextView)view.findViewById(R.id.fullname_field);
         mid=(TextView)view.findViewById(R.id.profile_id);
@@ -103,6 +105,15 @@ public class profilefragment extends Fragment {
                @Override
                public void onCancelled(@NonNull DatabaseError error) {
 
+               }
+           });
+
+           mLogoutButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   mAuth.signOut();
+                   Toast.makeText(getActivity().getApplicationContext(), "Logged Out", Toast.LENGTH_LONG).show();
+                   startActivity(new Intent(getActivity().getApplicationContext(), LoginActivity.class));
                }
            });
 
