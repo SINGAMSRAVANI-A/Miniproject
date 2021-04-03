@@ -21,9 +21,7 @@ public class leaderboardfragment extends Fragment {
     private String mParam2;
     leaderboardadapter myleaderadapter;
 
-    public leaderboardfragment() {
-
-    }
+    public leaderboardfragment() {}
 
     public static leaderboardfragment newInstance(String param1, String param2) {
         leaderboardfragment fragment = new leaderboardfragment();

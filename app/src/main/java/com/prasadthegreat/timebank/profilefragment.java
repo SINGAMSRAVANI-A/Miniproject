@@ -37,6 +37,9 @@ public class profilefragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    String name,id,task,time,status;
+
+
     private FirebaseAuth mAuth;
     Button mChangedetailsbtn, mLogoutButton;
     ImageView mChangedpbtn;
@@ -97,7 +100,7 @@ public class profilefragment extends Fragment {
 
                    taskcomplete.setText(task);
                    timecredits.setText(time);
-                   mid.setText("id: "+id);
+                   mid.setText("id: "+ id);
                    mname.setText(name);
                    mstatus.setText(status);
                }

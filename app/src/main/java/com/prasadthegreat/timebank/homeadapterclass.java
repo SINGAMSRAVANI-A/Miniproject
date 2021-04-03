@@ -1,5 +1,6 @@
 package com.prasadthegreat.timebank;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import org.w3c.dom.Text;
 
 public class homeadapterclass extends FirebaseRecyclerAdapter<homemodel,homeadapterclass.myviewholder>
 {
+    Context context;
+
     public homeadapterclass(@NonNull FirebaseRecyclerOptions<homemodel> options) {
         super(options);
     }
@@ -25,6 +28,7 @@ public class homeadapterclass extends FirebaseRecyclerAdapter<homemodel,homeadap
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull homemodel model) {
             holder.worktxt1.setText(model.getWorktitle());
+            System.out.println("Work Data:"+model.getWorkdata());
             holder.worktitle2.setText(model.getWorkdata());
 
             holder.worktxt1.setOnClickListener(new View.OnClickListener() {

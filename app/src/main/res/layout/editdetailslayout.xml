@@ -25,7 +25,7 @@
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
-                android:id="@+id/regusername"
+                android:id="@+id/usernameupdate"
                 style="@style/modifiedEditText"
                 android:textColor="@color/white"
                 android:inputType="text"
@@ -37,7 +37,7 @@
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
-                android:id="@+id/regmobilenumber"
+                android:id="@+id/idnumberupdate"
                 style="@style/modifiedEditText"
                 android:inputType="text"
                 android:maxLines="1"
@@ -48,7 +48,7 @@
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
-                android:id="@+id/regemail"
+                android:id="@+id/branchupdate"
                 style="@style/modifiedEditText"
                 android:inputType="text"
                 android:maxLines="1"
@@ -59,7 +59,7 @@
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
-                android:id="@+id/regpassword"
+                android:id="@+id/sectionupdate"
                 style="@style/modifiedEditText"
                 android:hint="Class"
                 android:maxLines="1"
@@ -67,6 +67,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/updatedetailsbtn"
             style="@style/loginButton"
             android:layout_margin="10dp"
             android:layout_gravity="center"
