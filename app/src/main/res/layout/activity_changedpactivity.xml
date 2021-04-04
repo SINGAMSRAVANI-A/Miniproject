@@ -5,41 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".changedpactivity">
-
     <ImageView
-        android:id="@+id/change_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerVertical="true"
-        android:layout_margin="20dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/user_dp" />
-
-
-
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_person"
+        />
+    <TextView
+        android:text="Change Profile"
+        android:id="@+id/change_profile_btn"
+        android:layout_below="@id/profile_image"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/changeimg"
-        android:layout_centerInParent="true"
-        android:textColor="@color/white"
-        android:layout_below="@id/change_image"
-        android:layout_centerVertical="true"
-        android:text="Change Image"
+        android:id="@+id/btnClose"
+        android:text="Close"
+        android:textStyle="bold"
+        android:textColor="#ffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/change_profile_btn"/>
     <Button
-        android:id="@+id/uploadimg"
-        android:layout_centerInParent="true"
-        android:textColor="@color/white"
-        android:layout_below="@id/changeimg"
-        android:layout_centerVertical="true"
-        android:text="Upload Image"
+        android:id="@+id/btnRegister"
+        android:text="Upload"
+        android:textStyle="bold"
+        android:textColor="#ffff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
-
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/btnClose"/>
 
 
 

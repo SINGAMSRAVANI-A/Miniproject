@@ -11,8 +11,22 @@
     <LinearLayout
         android:layout_gravity="center"
         android:padding="@dimen/loginViewsMargin"
+        android:orientation="horizontal"
         android:background="@color/orange"
+        android:weightSum="2"
         style="@style/linearParent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="47dp"
+            android:layout_height="98dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_person" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/worktxt"
             android:layout_marginTop="@dimen/loginViewsMargin"
@@ -30,5 +44,6 @@
             android:text="Work Discription"
             android:textSize="20sp"
             style="@style/headerTextPrimary" />
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -19,6 +19,7 @@ public class leaderboardadapter extends FirebaseRecyclerAdapter<homemodel,leader
 
     @Override
     protected void onBindViewHolder(@NonNull leaderviewholder holder, int position, @NonNull homemodel model) {
+        holder.idnum.setText(""+(position+1));
         holder.mName.setText(model.getName());
         holder.mPoints.setText(model.getTimecredits());
     }
@@ -33,10 +34,12 @@ public class leaderboardadapter extends FirebaseRecyclerAdapter<homemodel,leader
 
     public class leaderviewholder extends RecyclerView.ViewHolder{
 
-        TextView mName,mPoints;
+        TextView mName,mPoints,idnum;
         public leaderviewholder(@NonNull View itemView) {
             super(itemView);
 
+
+            idnum=(TextView)itemView.findViewById(R.id.idnum);
             mName=(TextView)itemView.findViewById(R.id.leadername);
             mPoints=(TextView)itemView.findViewById(R.id.leaderpoints);
         }

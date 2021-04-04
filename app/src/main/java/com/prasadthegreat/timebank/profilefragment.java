@@ -27,6 +27,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 
 public class profilefragment extends Fragment {
@@ -45,6 +46,8 @@ public class profilefragment extends Fragment {
     ImageView mChangedpbtn;
     private Toolbar mToolbar;
     TextView mname,mid,taskcomplete,timecredits,mstatus;
+
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
 
     public profilefragment() {
 
@@ -75,6 +78,9 @@ public class profilefragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mChangedetailsbtn = (Button) view.findViewById(R.id.changedatabtn);
+        mChangedpbtn = (ImageView) view.findViewById(R.id.profile_image);
+
         mChangedetailsbtn=(Button)view.findViewById(R.id.changedatabtn);
         mChangedpbtn=(ImageView)view.findViewById(R.id.profile_image);
         mLogoutButton = (Button) view.findViewById(R.id.logout);
@@ -139,6 +145,7 @@ public class profilefragment extends Fragment {
                 startActivity(intent);
             }
         });
+        getUserInfo();
         mToolbar=(Toolbar) view.findViewById(R.id.mytoolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(mToolbar);
 
@@ -147,4 +154,24 @@ public class profilefragment extends Fragment {
         return view;
     }
 
+    private void getUserInfo() {
+        databaseReference.child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists() && snapshot.getChildrenCount()>0){
+                    //String name = snapshot.child("name").getValue().toString();
+
+                    if(snapshot.hasChild("image")){
+                        String image = snapshot.child("image").getValue().toString();
+                        Picasso.get().load(image).into(mChangedpbtn);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }

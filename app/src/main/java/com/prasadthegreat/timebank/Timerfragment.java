@@ -80,20 +80,22 @@ public class Timerfragment extends Fragment {
         FirebaseDatabase.getInstance().getReference("notifications").child(currentuid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                if (data!=null) {
                     data = snapshot.getValue().toString().trim();
                     FirebaseDatabase.getInstance().getReference("users").child(data).child("name").addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                               String name = snapshot.getValue().toString().trim();
-                               tvSubSplash.setText(name + " is intrested to do your task");
+                            String name = snapshot.getValue().toString().trim();
+                            tvSubSplash.setText(name + " is intrested to do your task");
                         }
+
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
 
                         }
                     });
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

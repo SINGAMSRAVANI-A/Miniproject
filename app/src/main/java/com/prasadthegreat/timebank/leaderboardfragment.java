@@ -51,7 +51,7 @@ public class leaderboardfragment extends Fragment {
         mrecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         FirebaseRecyclerOptions<homemodel> options =
                 new FirebaseRecyclerOptions.Builder<homemodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("users").orderByValue().limitToFirst(5), homemodel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("users").orderByChild("name").limitToFirst(5), homemodel.class)
                         .build();
         myleaderadapter=new leaderboardadapter(options);
         mrecyclerView.setAdapter(myleaderadapter);

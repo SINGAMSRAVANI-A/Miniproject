@@ -2,6 +2,7 @@ package com.prasadthegreat.timebank;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -9,6 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 
 public class walletfragment extends Fragment {
@@ -18,6 +28,10 @@ public class walletfragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
+
+    private DatabaseReference databaseReference;
+    private FirebaseAuth Auth;
+    private ImageView profileImageView;
 
     public walletfragment() {
     }
@@ -51,6 +65,10 @@ public class walletfragment extends Fragment {
         Button mcredits=(Button)view.findViewById(R.id.freecreditsbtn);
         Button mhelp=(Button)view.findViewById(R.id.helpbtn);
 
+        Auth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("User");
+        profileImageView = view.findViewById(R.id.profile_image);
+
         mtop5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,5 +95,25 @@ public class walletfragment extends Fragment {
 
         return view;
     }
+    public void onResume(){
+        super.onResume();
+        databaseReference.child(Auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists() && snapshot.getChildrenCount()>0){
+                    //String name = snapshot.child("name").getValue().toString();
 
+                    if(snapshot.hasChild("image")){
+                        String image = snapshot.child("image").getValue().toString();
+                        Picasso.get().load(image).into(profileImageView);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }
