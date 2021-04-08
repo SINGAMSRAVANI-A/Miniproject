@@ -8,17 +8,19 @@ public class homemodel {
     String timecredits;
     String id;
     String mid;
+    String profilepic;
 
     public homemodel() {
     }
 
-    public homemodel(String worktitle, String workdata, String name, String timecredits, String id, String mid) {
+    public homemodel(String worktitle, String workdata, String name, String timecredits, String id, String mid, String profilepic) {
         this.worktitle = worktitle;
         this.workdata = workdata;
         this.name = name;
         this.timecredits = timecredits;
         this.id = id;
         this.mid = mid;
+        this.profilepic = profilepic;
     }
 
     public String getWorktitle() {
@@ -67,5 +69,13 @@ public class homemodel {
 
     public void setMid(String mid) {
         this.mid = mid;
+    }
+
+    public String getProfilepic() {
+        return profilepic;
+    }
+
+    public void setProfilepic(String profilepic) {
+        this.profilepic = profilepic;
     }
 }

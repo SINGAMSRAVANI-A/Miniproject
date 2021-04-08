@@ -1,6 +1,7 @@
 package com.prasadthegreat.timebank;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +39,10 @@ public class homeadapterclass extends FirebaseRecyclerAdapter<homemodel,homeadap
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull homemodel model) {
 
             holder.worktxt1.setText(model.getWorktitle());
-            System.out.println("Work Data:"+model.getWorkdata());
             holder.worktitle2.setText(model.getWorkdata());
 
+            Uri imagelink= Uri.parse(model.getProfilepic());
+            Picasso.get().load(imagelink).into(holder.imageView);
             holder.worktxt1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -93,6 +95,7 @@ public class homeadapterclass extends FirebaseRecyclerAdapter<homemodel,homeadap
 
 
         TextView worktxt1,worktitle2;
+        ImageView imageView;
         public myviewholder(@NonNull View itemView) {
 
             super(itemView);
